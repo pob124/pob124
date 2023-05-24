@@ -111,7 +111,7 @@ for item2 in a:
 print(new_lst)
 
 
-"""
+
 
 # 아래 코드를 완성하라.
 import os

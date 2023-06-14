@@ -60,7 +60,7 @@ def shopping(shop_file):
 def item_price(shop_file, item):
   item_dict=shopping(shop_file)
   return item_dict[item]
-print(item_price("shopA.txt", '김치'))
+
 
 
 

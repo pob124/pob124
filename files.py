@@ -13,32 +13,6 @@ Original file is located at
 파일 저장 경로와 파일 서버 주소를 지정에 필요한 기본 설정을 지정한다.
 """
 
-from pathlib import Path
-from urllib.request import urlretrieve
-
-"""데이터가 저장된 텍스트 파일 서버 주소는 다음과 같다."""
-
-
-
-"""현재 작업 디렉토리의 `data` 하위 디렉토리에 파일을 다운로드해서 저장할 준비를 한다."""
-
-# 저장위치 지정과 생성
-
-"""`myWget()` 함수는 파일 서버에서 지정된 파일을 동일한 파일명으로 지정된 디렉토리에 저장한다.
-
-**쇼핑몰 파일 관련**
-
-**문제 1**
-
-`shopA.txt` 파일은 쇼핑몰A에서 판매하는 상품의 가격을 담고 있음을 확인해보자.
-먼저 해당 파일을 다운로드 한다.
-"""
-
-
-"""이제 파일 전체 내용을 출력하는 코드를 작성하라.
-
-힌트: `with-as` 명령문, `open()` 함수, `readlines()` 또는 `read()` 파일 메서드.
-"""
 
 # 코드를 작성하세요.
 from pathlib import Path
@@ -83,15 +57,7 @@ def search_dir(filename):
 
 
 
-"""**문제 4**
 
-`shopA.txt` 와 같이 상품명과 가격으로 이루어진 쇼핑 리스트가 포함된 파일의 이름을 입력받으면
-상품명과 가격을 각각 키와 값으로 갖는 사전 객체를 반환하는 함수 `shopping()` 을 구현하라.
-
-힌트: 문제 3을 해결하기 위해 작성한 코드를 이용한다.
-"""
-
-# 아래 코드를 완성하라.
 
 def shopping(shop_file):
   shopped_file = search_dir(shop_file)
@@ -105,7 +71,6 @@ def shopping(shop_file):
     return shop_dict
 
 
-# 함수를 완성하라.
 
 def item_price(shop_file, item):
   item_dict=shopping(shop_file)
@@ -114,11 +79,6 @@ print(item_price("shopA.txt", '김치'))
 
 
 
-"""사용자가 상품을 입력하면, 쇼핑몰A와 쇼핑몰B 중 어느 쇼핑몰에서 구입하는 것이 얼마나 저렴한지를 보여주는
-함수 `price_comparison()`를 작성하라.
-"""
-
-# 코드를 완성하라.
 
 def price_comparison(item):
  shop_A =int(item_price("shopA.txt",item))

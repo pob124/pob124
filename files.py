@@ -68,7 +68,7 @@ print(item_price("shopA.txt", '김치'))
 def price_comparison(item):
  shop_A =int(item_price("shopA.txt",item))
  shop_B =int(item_price("shopB.txt",item))
- if shop_A > shop_B :0
+ if shop_A > shop_B :
    return f"shop_A 가  {shop_A - shop_B} 원 더 저렴"
  if shop_B > shop_A :
    return f"shop_A 가 {shop_B - shop_A}  원 더 저렴"

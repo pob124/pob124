@@ -18,13 +18,11 @@ from urllib.request import urlretrieve
 
 """데이터가 저장된 텍스트 파일 서버 주소는 다음과 같다."""
 
-base_url = "https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/data/"
+
 
 """현재 작업 디렉토리의 `data` 하위 디렉토리에 파일을 다운로드해서 저장할 준비를 한다."""
 
 # 저장위치 지정과 생성
-data_path = Path() / "data"
-data_path.mkdir(parents=True, exist_ok=True)
 
 """`myWget()` 함수는 파일 서버에서 지정된 파일을 동일한 파일명으로 지정된 디렉토리에 저장한다.
 

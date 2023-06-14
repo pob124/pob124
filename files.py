@@ -47,7 +47,7 @@ def search_dir(filename):
 def shopping(shop_file):
   shopped_file = search_dir(shop_file)
   shop_dict = {} # 생성할 사전 객체
-  with open (shopped_file,"r") as f:
+  with open(shopped_file,"r") as f:
     for line in f:
       line= line.strip()
       if "원" in line:

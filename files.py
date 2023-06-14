@@ -21,7 +21,7 @@ import os
 ### urllib모듈 -> request 라이브러리 -> urlretrieve 임포트
 base_url="https://raw.githubusercontent.com/codingalzi/pybook/master/jupyter-book/data/"
 
-def myWget(filename):
+def myWget(filename,base_url):
   file_url = base_url + filename ## 링크 + 가져올 파일의 이름
   data_path = Path() / "data"
   data_path.mkdir(parents=True,exist_ok=True)
@@ -42,21 +42,6 @@ def search_dir(filename):
 
       except:
         continue
-
-
-"""**문제 2**
-
-`shopA.txt` 파일의 내용을 확인하면, 오타가 있다.
-'오레ㄴ지' 를 '오렌지'로 변경한 후에
-`shopA.txt` 파일을 열어 오타가 수정되었는지를 확인하여라.
-
-힌트: 파일의 `read()` 메서드, 문자열의 `replace()` 메서드
-
-* 파일 읽기: `read()` 메서드 활용
-
-
-
-
 
 
 def shopping(shop_file):

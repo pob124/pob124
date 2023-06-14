@@ -36,7 +36,6 @@ data_path.mkdir(parents=True, exist_ok=True)
 먼저 해당 파일을 다운로드 한다.
 """
 
-myWget("shopA.txt")
 
 """이제 파일 전체 내용을 출력하는 코드를 작성하라.
 
@@ -57,7 +56,7 @@ def myWget(filename):
   target_path = data_path / filename
   return urlretrieve(file_url,target_path) ## url/파일 , 지정 경로로 다운
 
-myWget("shopA.txt")
+
 
 def search_dir(filename):
   ### 하위 디렉토리 찾은 다음 하위 디렉토리에 파일이 있는지 확인
@@ -72,7 +71,6 @@ def search_dir(filename):
       except:
         continue
 
-search_dir("shopA.txt")
 
 """**문제 2**
 
@@ -83,86 +81,9 @@ search_dir("shopA.txt")
 힌트: 파일의 `read()` 메서드, 문자열의 `replace()` 메서드
 
 * 파일 읽기: `read()` 메서드 활용
-"""
 
-# 파일내용을 하나의 문자열로 생성하는 코드를 작성하라.
-with open(search_dir("shopA.txt") , "r") as f:
-  a= f.read()
-  a= a.replace("오레ㄴ지","오렌지")
-  with open(search_dir("shopA.txt") , "w") as f_1:
-    f_1.write(a)
-  with open(search_dir("shopA.txt"), "r") as f_2:
-    print(f_2.read())
 
-"""* 오타 수정: `replace()` 문자열 메서드 활용"""
 
-# 오타를 수정하는 코드를 작성하라.
-with open(search_dir("shopA.txt") , "r") as f:
-  a= f.read()
-  a= a.replace("오레ㄴ지","오렌지")
-  with open(search_dir("shopA.txt") , "w") as f_1:
-    f_1.write(a)
-  with open(search_dir("shopA.txt"), "r") as f_2:
-    print(f_2.read())
-
-"""* 파일 저장"""
-
-# 오타가 수정된 문자열을 파일로 저장하는 코드를 작성하라.
-
-with open(search_dir("shopA.txt") , "r") as f:
-  a= f.read()
-  a= a.replace("오레ㄴ지","오렌지")
-  with open(search_dir("shopA.txt") , "w") as f_1:
-    f_1.write(a)
-  with open(search_dir("shopA.txt"), "r") as f_2:
-    print(f_2.read())
-
-"""* 파일 내용 확인"""
-
-# 오타가 수정되었음을 확인하는 코드를 작성하라.
-with open(search_dir("shopA.txt") , "r") as f:
-  a= f.read()
-  a= a.replace("오레ㄴ지","오렌지")
-  with open(search_dir("shopA.txt") , "w") as f_1:
-    f_1.write(a)
-  with open(search_dir("shopA.txt"), "r") as f_2:
-    print(f_2.read())
-
-"""**문제 3**
-
-상품명과 가격을 키-값의 쌍으로 갖는 아래 모양의 딕셔너리를 만들어라.
-단, 오타가 수정된 파일을 이용해야 한다.
-
-```python
-{'우유': 2540,
- '계란': 7480,
- '생수': 980,
- '짜장라면': 3220,
- '두부': 1450,
- '콩나물': 1680,
- '김': 5480,
- '닭고기': 5980,
- '식빵': 2480,
- '바나나': 4980,
- '오렌지': 990,
- '카레': 2480,
- '만두': 6980,
- '어묵': 7980,
- '참치': 11880,
- '김치': 7980,
- '간장': 10800}
-```
-"""
-
-to_open = search_dir("shopA.txt")
-with open (to_open, "r") as f:
-  a={}
-  for line in f:
-    line = line.strip()
-    if "원" in line:
-      line = line.split(" ")
-      a[line[0]] = line[1].replace("원","")
-a
 
 """**문제 4**
 
@@ -184,14 +105,7 @@ def shopping(shop_file):
         line = line.split(" ")
         shop_dict[line[0]]=line[1].replace('원',"")
     return shop_dict
-shopping("shopA.txt")
 
-"""**문제 5**
-
-쇼핑 리스트와 상품을 인자로 지정하면 상품의 가격을 반환하는 함수 `item_price()` 를 구현하라.
-
-힌트: `shopping()` 함수를 이용한다.
-"""
 
 # 함수를 완성하라.
 
@@ -200,13 +114,7 @@ def item_price(shop_file, item):
   return item_dict[item]
 print(item_price("shopA.txt", '김치'))
 
-"""**문제 6**
 
-`shopB.txt` 파일은 쇼핑몰B에서 판매하는 상품의 가격을 담고 있으며,
-`shopA.txt` 파일과 동일한 방식으로 다운로드할 수 있다.
-"""
-
-myWget("shopB.txt")
 
 """사용자가 상품을 입력하면, 쇼핑몰A와 쇼핑몰B 중 어느 쇼핑몰에서 구입하는 것이 얼마나 저렴한지를 보여주는
 함수 `price_comparison()`를 작성하라.
@@ -217,57 +125,9 @@ myWget("shopB.txt")
 def price_comparison(item):
  shop_A =int(item_price("shopA.txt",item))
  shop_B =int(item_price("shopB.txt",item))
- if shop_A > shop_B :
+ if shop_A > shop_B :0
    return f"shop_A 가  {shop_A - shop_B} 원 더 저렴"
  if shop_B > shop_A :
    return f"shop_A 가 {shop_B - shop_A}  원 더 저렴"
  if shop_B == shop_A :
    return f"shop_A shop_B  {shop_B - shop_A} 로 동일"
-print(price_comparison('김치'))
-
-"""**다이빙 기록 관련**
-
-**문제 7**
-
-[5미터 다이빙 기록 에서 등수를 확인하는 작업](https://codingalzi.github.io/pybook/files.html#sec-exp-diving-5m)과
-동일한 작업을 10미터 다이빙 기록에 대해 진행하라.
-"""
-
-# 코드를 작성하라.
-myWget("results10m.txt")
-str(myWget("results5m.txt")[0])
-r5m_path = search_dir("results5m.txt")
-r10m_path= search_dir("results10m.txt")
-with open(r10m_path, mode="r",encoding="utf-8") as f:
-  empty_dict_1={}
-  for line in f:
-
-    line=line.strip().split()
-
-    if "." in line[1]:
-      empty_dict_1[line[0]] = line[1]
-empty_dict_1 = empty_dict_1
-r10m_items =sorted(empty_dict_1.items(), key=lambda x : x[1] , reverse=True)
-
-"""**문제 8**
-
-5미터 다이빙 기록과 10미터 다이빙 기록의 합에 대해 등수를 확인하는 코드를 작성하라.
-"""
-
-# 코드를 작성하라.
-r5m_path = search_dir("results5m.txt")
-with open(r5m_path, mode="r",encoding="utf-8") as f:
-  empty_dict_2={}
-  for line in f:
-
-    line=line.strip().split()
-
-    if "." in line[1]:
-      empty_dict_2[line[0]] = line[1]
-r5m_items =dict(sorted(empty_dict_2.items(), key=lambda x : x[1] , reverse=True))
-values5m=list(empty_dict_2.keys())
-empty_dict={}
-for key_1 in values5m:
-  empty_dict[key_1] = float(empty_dict_1[key_1]) + float(empty_dict_2[key_1])
-  r10m_5m_items =sorted(empty_dict.items(), key=lambda x : x[1] , reverse=True)
-r10m_5m_items

@@ -1,4 +1,3 @@
- "baboo" 
-"bibidi" "babidi" 
-"babidi" 
-"singing<br/>a<br/>song" 
+i'm changhyeon
+
+nice to meet you.

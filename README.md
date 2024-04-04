@@ -1,15 +1,17 @@
-<<<<<<< HEAD
-Hello, i'm chang hyeon!!!
 
+
+Hello, i'm changhyeon !!!!!!!!
+=======
 :pray:
-
+=======
 where are we?
-
+=======
 where are you.
-
+=======
 i'm my house.
 =======
 
 # pob124
-#HCH
->>>>>>> b0862072b9546819741fd66606335324c8540693
+
+:w
+
